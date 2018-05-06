@@ -1,0 +1,13 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div id="map_canvas"></div>
+  <div class="overlay" [ngClass]="{'active': overlayActive}"></div>
+  <button ion-button (click)="onButtonClick($event)">Toggle</button>
+</ion-content>
