@@ -8,6 +8,8 @@
 
 <ion-content padding>
   <div id="map_canvas"></div>
+  <div class="overlay" [ngClass]="{'active': overlayActive}"></div>
+  <button ion-button (click)="onButtonClick($event)">Toggle</button>
   <div class="carousel">
     <ion-slides>
       <ion-slide *ngFor="let picture of pictures">

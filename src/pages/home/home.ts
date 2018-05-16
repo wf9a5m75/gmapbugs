@@ -9,6 +9,7 @@ import { GoogleMaps, GoogleMap, GoogleMapsEvent} from "@ionic-native/google-maps
 export class HomePage {
 
   mapReady: boolean = false;
+  overlayActive: boolean = false;
   pictures: Array<string> = ['cat','dog','bird'];
   rects: Array<number>;
   map: GoogleMap;
@@ -16,6 +17,9 @@ export class HomePage {
   constructor(public navCtrl: NavController) {
   }
 
+  onButtonClick(evt) {
+    this.overlayActive = !this.overlayActive;
+  }
 
   loadMap() {
     // Create a map after the view is loaded.
