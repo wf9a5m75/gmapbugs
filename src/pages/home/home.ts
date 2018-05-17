@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { GoogleMaps, GoogleMap, GoogleMapsEvent} from "@ionic-native/google-maps";
+import {SecondPage} from "../second/second";
 
 @Component({
   selector: 'page-home',
@@ -39,6 +40,16 @@ export class HomePage {
     this.map.one(GoogleMapsEvent.MAP_READY).then(() => {
       this.mapReady = true;
     });
+  }
+
+  second() {
+    this.navCtrl.push(SecondPage,
+      {},
+      {
+        animate: true,
+        animation: 'md-transition',
+        direction: 'forward'
+      });
   }
 
   ionViewDidLoad() {
