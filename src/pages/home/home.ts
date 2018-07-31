@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
 import { GoogleMaps, GoogleMap, GoogleMapsEvent} from "@ionic-native/google-maps";
-import {SecondPage} from "../second/second";
+
+declare let plugin: any;
 
 @Component({
   selector: 'page-home',
@@ -10,16 +10,11 @@ import {SecondPage} from "../second/second";
 export class HomePage {
 
   mapReady: boolean = false;
-  overlayActive: boolean = false;
-  pictures: Array<string> = ['cat','dog','bird'];
-  rects: Array<number>;
   map: GoogleMap;
 
-  constructor(public navCtrl: NavController) {
-  }
 
-  onButtonClick(evt) {
-    this.overlayActive = !this.overlayActive;
+
+  constructor() {
   }
 
   loadMap() {
@@ -33,6 +28,16 @@ export class HomePage {
         },
         zoom: 18,
         tilt: 30
+      },
+      controls: {
+        //myLocationButton: false,
+        myLocation: false
+      },
+      'gestures': {
+        'scroll': true,
+        'tilt': true,
+        'rotate': true,
+        'zoom': true
       }
     });
 
@@ -42,22 +47,11 @@ export class HomePage {
     });
   }
 
-  second() {
-    this.navCtrl.push(SecondPage,
-      {},
-      {
-        animate: true,
-        animation: 'md-transition',
-        direction: 'forward'
-      });
-  }
 
   ionViewDidLoad() {
     this.loadMap();
-    this.rects = [];
-    for (let i = 0; i < 100; i++) {
-      this.rects.push(1);
-    }
   }
+
+
 
 }

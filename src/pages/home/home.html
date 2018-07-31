@@ -1,23 +1,11 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Google Maps CPU usage bug
+      Google Maps Permission Request
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
   <div id="map_canvas"></div>
-  <div class="overlay" [ngClass]="{'active': overlayActive}"></div>
-  <button ion-button (click)="onButtonClick($event)">Toggle</button>
-  <button ion-button (click)="second($event)">Next Page</button>
-  <div class="carousel">
-    <ion-slides>
-      <ion-slide *ngFor="let picture of pictures">
-        <div class="mapSlide" [ngStyle]="{'background-image': 'url(https://loremflickr.com/320/240/'+ picture +')'}">
-          <div *ngFor="let rect of rects" class="rect"></div>
-        </div>
-      </ion-slide>
-    </ion-slides>
-  </div>
 </ion-content>
