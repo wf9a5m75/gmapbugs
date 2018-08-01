@@ -7,5 +7,16 @@
 </ion-header>
 
 <ion-content padding>
-  <div id="map_canvas"></div>
+  <div id="map_canvas">
+    <ion-select [(ngModel)]="testCase" (ionChange)="onItemSelected();"
+                style="background-color:rgba(125,125,125,0.5);color:white;font-weight:bold;width:100%">
+      <ion-option value="0">myLocation: false</ion-option>
+      <ion-option value="1">myLocationButton: false</ion-option>
+      <ion-option value="2">myLocation: false, myLocationButton: false</ion-option>
+      <ion-option value="3">myLocation: true</ion-option>
+      <ion-option value="4">myLocationButton: true</ion-option>
+      <ion-option value="5">myLocation: true, myLocationButton: true</ion-option>
+      <ion-option value="6">(no option)</ion-option>
+    </ion-select>
+  </div>
 </ion-content>
